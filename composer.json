@@ -1,0 +1,12 @@
+{
+    "name": "FEREY/portfolio_test",
+    "require": {
+        "zendframework/zendframework1": "~1.12"
+    },
+    "authors": [
+        {
+            "name": "Stéphane FEREY",
+            "email": "s.ferey@cleo-consulting.fr"
+        }
+    ]
+}

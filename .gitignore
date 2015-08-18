@@ -1,3 +1,13 @@
+
+# Ignore file specific IDE
+portfolio_TP.iml
+/.idea
+
+# Ignore file specific vagrant
+/.vagrant
+
+# Ignore file specific composer
+composer.lock
 composer.phar
 vendor/
 
