@@ -1,0 +1,19 @@
+{
+  "name": "portfolio_TP",
+  "version": "0.0.1",
+  "homepage": "https://github.com/sferey/portfolio_TP",
+  "authors": [
+    "FEREY Stéphane <stephane.ferey@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}

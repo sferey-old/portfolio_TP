@@ -3,6 +3,11 @@
 portfolio_TP.iml
 /.idea
 
+
+# Ignore file specific Bower
+/bower_components
+/src/public/assets
+
 # Ignore file specific vagrant
 /.vagrant
 
