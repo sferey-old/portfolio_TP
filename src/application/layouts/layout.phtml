@@ -1,0 +1,70 @@
+<?=$this->Doctype();?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <?= $this->headMeta() . PHP_EOL; ?>
+    <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Share+Tech' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Stéphane FÉREY</a>
+        </div>
+        <canvas id="courbes" class="navbar-right"></canvas>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+            <ul class="nav navbar-nav">
+                <li><a href="/" class="">Home</a></li>
+                <li class="active"><a href="#profesional">Experience</a></li>
+                <li><a href="#school">Formation</a></li>
+
+                <li><a href="#skill">Compétences</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+<div class="container">
+    <?= $this->layout()->content; ?>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">Created by Stéphane FEREY</p>
+    </div>
+</footer>
+<script src="/assets/jquery/dist/jquery.min.js"></script>
+<script language="javascript">
+    var canvas = document.getElementById('courbes');
+    var ctx = canvas.getContext('2d');
+    var numberOfLines = 12;
+    var i = 0;
+    var cycle = function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for(var j=0; j< numberOfLines; ++j) {
+            ctx.lineWidth = 1+2*(numberOfLines-j);
+            ctx.strokeStyle = 'rgba(100,200,'+Math.floor(Math.abs(Math.cos(i/80)*256))+','+(j/5+0.1)+')';
+            var offset = (i+j*10*Math.abs(Math.cos(i/100)))/20;
+            var x = (Math.sin(offset)+1)*canvas.height/2;
+            var cpy1 = (Math.cos(offset)+0.5)*canvas.height;
+            var cpy2 = canvas.height - cpy1;
+            ctx.beginPath();
+            ctx.moveTo(x, 0);
+            ctx.bezierCurveTo(canvas.width/3, cpy1, 2*canvas.width/3, cpy2, canvas.width, x);
+            ctx.stroke();
+        }
+        i++;
+    };
+    setInterval(cycle, 30);
+</script>
+<script src="/js/main.js"></script>
+</body>
+</html>

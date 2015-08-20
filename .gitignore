@@ -1,12 +1,12 @@
 
 # Ignore file specific IDE
-portfolio_TP.iml
 /.idea
-
+/portfolio_TP.iml
 
 # Ignore file specific Bower
 /bower_components
 /src/public/assets
+
 
 # Ignore file specific vagrant
 /.vagrant

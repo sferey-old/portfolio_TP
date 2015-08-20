@@ -22,21 +22,35 @@ TD :
     Comment envoyer des données du controller à la vue
     Création de Mock
 
-TP : Réaliser les pages additionnels pour le portfolio
-  - Controller Formation
-    - Action CRUD
-  - Controller Contact
-    - Action index
-  - Controller Auth
-    - Action login
-    - Action Logout
-  
+TP : 
+    Réaliser les pages additionnels pour le portfolio
+      - Controller Formation
+        - Action CRUD
+      - Controller Contact
+        - Action index
+      - Controller Auth
+        - Action login
+        - Action Logout
+      
 Réfléchir aux process pour Formation Create / Update / Delete
 Réfléchir aux process pour Auth Login / Logout
   
   
 ### Stage 2
-  
+  Ajout de fonctionnalité
+    - Layout
+    - Partials
+    - Navigation
+    - Formulaire
+
+TD : 
+    Réalisation d'un formulaire Login
+    
+TP : 
+    Restructurer les pages en ajoutant les layouts et partials
+      - Réaliser les formulaires
+      
+    
 
 
 ### Stage 3

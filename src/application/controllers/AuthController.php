@@ -7,9 +7,9 @@ class AuthController extends Zend_Controller_Action
     }
 
     public function loginAction(){
-        # Création du formulaire
-        # Récupération des données
-        # Validation des données avec le formulaire
+        # CrÃ©ation du formulaire
+        # RÃ©cupÃ©ration des donnÃ©es
+        # Validation des donnÃ©es avec le formulaire
         # Validation des identifiants
         # Connection de l'utilisateur
         # Sauvegarde en session

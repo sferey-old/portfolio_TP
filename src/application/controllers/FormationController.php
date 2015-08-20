@@ -7,16 +7,16 @@ class FormationController extends Zend_Controller_Action
     }
 
     public function createAction() {
-        # Création du formulaire
-        # Récupération des données
-        # Validation des données avec le formulaire
-        # Enregistrement des données
+        # CrÃ©ation du formulaire
+        # RÃ©cupÃ©ration des donnÃ©es
+        # Validation des donnÃ©es avec le formulaire
+        # Enregistrement des donnÃ©es
     }
 
     public function readAction() {
         $experiences = array(
             1 => array(
-                'name' => "Formateur - Développeur web",
+                'name' => "Formateur - DÃ©veloppeur web",
                 'business' => "Ecole IPSSI - Groupe IP-Formation",
                 'begin' => "02/2014", 'end' => "now",
                 'description' => null),
@@ -24,23 +24,23 @@ class FormationController extends Zend_Controller_Action
                 'name' => "Analyste Programmeur Web",
                 'business' => "Lorenz & Hamilton Group",
                 'begin' => "08/2012", 'end' => "01/2014",
-                'description' => "Développement web sur Zend Framework"),
+                'description' => "DÃ©veloppement web sur Zend Framework"),
             3 => array(
                 'name' => "Analyste Programmeur Web",
                 'business' => "Core-Techs",
                 'begin' => "08/2011", 'end' => "07/2012",
-                "description" => "Développement web sur Zend Framework"),
+                "description" => "DÃ©veloppement web sur Zend Framework"),
             4 => array(
                 'name' => "Analyste Programmeur Web",
                 'business' => "dealCOM",
                 'begin' => "07/2010", 'end' => "07/2011",
-                "description" => "Développement web PHP from Scratch"),
+                "description" => "DÃ©veloppement web PHP from Scratch"),
         );
         $this->view->assign('experiences', $experiences);
 
         $educations = array(
             1 => array(
-                'name' => 'Développeur Web',
+                'name' => 'DÃ©veloppeur Web',
                 'business' => 'IP-Formation',
                 'begin' => "2010", 'end' => "2011",
             ),
@@ -48,25 +48,25 @@ class FormationController extends Zend_Controller_Action
                 'name' => 'DUT Informatique',
                 'business' => 'IUT Amiens',
                 'begin' => "2006", 'end' => "2008",
-                'description' => 'Options : Génie Informatique'
+                'description' => 'Options : GÃ©nie Informatique'
             )
         );
         $this->view->assign('educations', $educations);
     }
 
     public function updateAction() {
-        # Création du formulaire
-        # Récupération de l'identifiant
-        # Récupération de l'enregistrement
+        # CrÃ©ation du formulaire
+        # RÃ©cupÃ©ration de l'identifiant
+        # RÃ©cupÃ©ration de l'enregistrement
         # Hydratation du formulaire
-        # Récupération des données
-        # Validation des données avec le formulaire
-        # Enregistrement des données
+        # RÃ©cupÃ©ration des donnÃ©es
+        # Validation des donnÃ©es avec le formulaire
+        # Enregistrement des donnÃ©es
     }
 
     public function deleteAction() {
-        # Récupération de l'identifiant
-        # Récupération de l'enregistrement
+        # RÃ©cupÃ©ration de l'identifiant
+        # RÃ©cupÃ©ration de l'enregistrement
         # Suppression de l'enregistrement
     }
 }
