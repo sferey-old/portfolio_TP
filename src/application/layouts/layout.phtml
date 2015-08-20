@@ -8,6 +8,11 @@
     <link href="/css/styles.css" rel="stylesheet">
 </head>
 <body>
+<?php
+$config    = new Zend_Config_Xml(APPLICATION_PATH . '/configs/navigation.xml', 'nav');
+$container = new Zend_Navigation($config);
+$this->navigation($container)->menu()->setUlClass("nav navbar-nav");
+?>
 <nav class="navbar navbar-default navbar-fixed-top">
     <!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
     <div class="container">
@@ -22,25 +27,14 @@
         </div>
         <canvas id="courbes" class="navbar-right"></canvas>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-            <ul class="nav navbar-nav">
-                <li><a href="/" class="">Home</a></li>
-                <li class="active"><a href="#profesional">Experience</a></li>
-                <li><a href="#school">Formation</a></li>
-
-                <li><a href="#skill">Compétences</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
+            <?= $this->navigation();?>
         </div><!-- /.navbar-collapse -->
     </div>
 </nav>
 <div class="container">
     <?= $this->layout()->content; ?>
 </div>
-<footer class="footer">
-    <div class="container">
-        <p class="text-muted">Created by Stéphane FEREY</p>
-    </div>
-</footer>
+<?= $this->partial("./partials/footer.phtml");?>
 <script src="/assets/jquery/dist/jquery.min.js"></script>
 <script language="javascript">
     var canvas = document.getElementById('courbes');

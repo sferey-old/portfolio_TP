@@ -1,44 +1,12 @@
-<section id="profesional" class="cd-container cd-timeline">
+<section id="professional" class="cd-container cd-timeline">
     <div class="cd-header">
         <h1>Expérience</h1>
     </div>
-    <?php
-    $i = 0;
-    foreach($this->experiences as $experience) {
-        $i++;
-        ?>
-        <div class="cd-timeline-block">
-            <div class="cd-timeline-img cd-<?= ($i % 2)?"odd":"even";?>">
-                <span class="glyphicon glyphicon-briefcase"></span>
-            </div> <!-- cd-timeline-img -->
-
-            <div class="cd-timeline-content">
-                <h2><?= $experience['name'] ?><br><small><?= $experience['business'] ?></small></h2>
-                <p><?= ($experience['description'] != null)?$experience['description']:false?></p>
-                <span class="cd-date"><?= $experience['begin']?><?= ($experience['end'] == null)?false:($experience['end'] == 'now')?" - Aujourd'hui":" - ".$experience['end'];?></span>
-            </div> <!-- cd-timeline-content -->
-        </div> <!-- cd-timeline-block -->
-    <?php }?>
+    <?= $this->partialLoop("./formation/partials/item-timeline.phtml", $this->experiences); ?>
 </section> <!-- cd-timeline -->
 <section id="school" class="cd-container cd-timeline">
     <div class="cd-header">
         <h1>Formation</h1>
     </div>
-    <?php
-    $i = 0;
-    foreach($this->educations as $education) {
-        $i++;
-        ?>
-        <div class="cd-timeline-block">
-            <div class="cd-timeline-img cd-<?= ($i % 2)?"odd":"even";?>">
-                <span class="glyphicon glyphicon-briefcase"></span>
-            </div> <!-- cd-timeline-img -->
-
-            <div class="cd-timeline-content">
-                <h2><?= $education['name'] ?><br><small><?= $education['business'] ?></small></h2>
-                <p><?= (isset($education['description']) && $education['description'] != null)?$education['description']:false?></p>
-                <span class="cd-date"><?= $education['begin']?><?= ($education['end'] == null)?false:($education['end'] == 'now')?" - Aujourd'hui":" - ".$education['end'];?></span>
-            </div> <!-- cd-timeline-content -->
-        </div> <!-- cd-timeline-block -->
-    <?php }?>
+    <?= $this->partialLoop("./formation/partials/item-timeline.phtml", $this->educations); ?>
 </section> <!-- cd-timeline -->
