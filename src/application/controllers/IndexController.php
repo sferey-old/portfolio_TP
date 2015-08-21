@@ -3,7 +3,6 @@
 class IndexController extends Zend_Controller_Action
 {
     public function indexAction(){
-        $this->_helper->layout->setLayout('home');
         $profile = array(
             'name'  => "Stéphane FÉREY",
             'slogan'=> "Genius developper",
