@@ -1,115 +1,12 @@
-<!doctype html>
-<html>
-<head>
-    <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Share+Tech' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-    <link href="/css/styles.css" rel="stylesheet">
-    <meta charset="UTF-8">
-</head>
-<body>
-<div id="main">
-<nav class="navbar navbar-default navbar-fixed-top">
-    <!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Stéphane FÉREY</a>
-        </div>
-        <canvas id="courbes" class="navbar-right"></canvas>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-            <ul class="nav navbar-nav">
-                <li><a href="/" class="">Home</a></li>
-                <li class="active"><a href="#profesional">Experience</a></li>
-                <li><a href="#school">Formation</a></li>
-
-                <li><a href="#skill">Compétences</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
+<section id="professional" class="cd-container cd-timeline">
+    <div class="cd-header">
+        <h1>Expérience</h1>
     </div>
-</nav>
-<div class="container">
-    <section id="profesional" class="cd-container cd-timeline">
-        <div class="cd-header">
-            <h1>Expérience</h1>
-        </div>
-        <?php
-        $i = 0;
-        foreach($this->experiences as $experience) {
-            $i++;
-            ?>
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-<?= ($i % 2)?"odd":"even";?>">
-                    <span class="glyphicon glyphicon-briefcase"></span>
-                </div> <!-- cd-timeline-img -->
-
-                <div class="cd-timeline-content">
-                    <h2><?= $experience['name'] ?><br><small><?= $experience['business'] ?></small></h2>
-                    <p><?= ($experience['description'] != null)?$experience['description']:false?></p>
-                    <span class="cd-date"><?= $experience['begin']?><?= ($experience['end'] == null)?false:($experience['end'] == 'now')?" - Aujourd'hui":" - ".$experience['end'];?></span>
-                </div> <!-- cd-timeline-content -->
-            </div> <!-- cd-timeline-block -->
-        <?php }?>
-    </section> <!-- cd-timeline -->
-    <section id="school" class="cd-container cd-timeline">
-        <div class="cd-header">
-            <h1>Formation</h1>
-        </div>
-        <?php
-        $i = 0;
-        foreach($this->educations as $education) {
-            $i++;
-            ?>
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-<?= ($i % 2)?"odd":"even";?>">
-                    <span class="glyphicon glyphicon-briefcase"></span>
-                </div> <!-- cd-timeline-img -->
-
-                <div class="cd-timeline-content">
-                    <h2><?= $education['name'] ?><br><small><?= $education['business'] ?></small></h2>
-                    <p><?= (isset($education['description']) && $education['description'] != null)?$education['description']:false?></p>
-                    <span class="cd-date"><?= $education['begin']?><?= ($education['end'] == null)?false:($education['end'] == 'now')?" - Aujourd'hui":" - ".$education['end'];?></span>
-                </div> <!-- cd-timeline-content -->
-            </div> <!-- cd-timeline-block -->
-        <?php }?>
-    </section> <!-- cd-timeline -->
-</div>
-<footer class="footer">
-    <div class="container">
-        <p class="text-muted">Created by Stéphane FÉREY</p>
+    <?= $this->partialLoop("./formation/partials/item-timeline.phtml", $this->experiences); ?>
+</section> <!-- cd-timeline -->
+<section id="school" class="cd-container cd-timeline">
+    <div class="cd-header">
+        <h1>Formation</h1>
     </div>
-</footer>
-</div>
-<script src="/assets/jquery/dist/jquery.min.js"></script>
-<script language="javascript">
-    var canvas = document.getElementById('courbes');
-    var ctx = canvas.getContext('2d');
-    var numberOfLines = 12;
-    var i = 0;
-    var cycle = function() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for(var j=0; j< numberOfLines; ++j) {
-            ctx.lineWidth = 1+2*(numberOfLines-j);
-            ctx.strokeStyle = 'rgba(100,200,'+Math.floor(Math.abs(Math.cos(i/80)*256))+','+(j/5+0.1)+')';
-            var offset = (i+j*10*Math.abs(Math.cos(i/100)))/20;
-            var x = (Math.sin(offset)+1)*canvas.height/2;
-            var cpy1 = (Math.cos(offset)+0.5)*canvas.height;
-            var cpy2 = canvas.height - cpy1;
-            ctx.beginPath();
-            ctx.moveTo(x, 0);
-            ctx.bezierCurveTo(canvas.width/3, cpy1, 2*canvas.width/3, cpy2, canvas.width, x);
-            ctx.stroke();
-        }
-        i++;
-    };
-    setInterval(cycle, 30);
-</script>
-<script src="/js/main.js"></script>
-</body>
-</html>
+    <?= $this->partialLoop("./formation/partials/item-timeline.phtml", $this->educations); ?>
+</section> <!-- cd-timeline -->
