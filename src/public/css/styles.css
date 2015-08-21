@@ -6,9 +6,7 @@
  * Base structure
  */
 
-html,
-body {
-    height: 100%;
+html,body {
     background-color: #333;
 }
 
@@ -33,7 +31,16 @@ body {
 #courbes{
      width: 100%;
      height: 100px;
- }
+}
+
+body #main{
+    position: relative;
+    min-height: 100%;
+    margin-top: 60px;
+    padding-bottom: 60px;
+    color:#fff;
+}
+
 .navbar, .cd-timeline-img{
     color: #fff;
     text-shadow: 0 1px 3px rgba(0,0,0,.5);
@@ -101,10 +108,6 @@ h1.cover-heading{
 /*
  * Vertical timeline
  */
-.cd-timeline.cd-container{
-    margin-top:60px;
-    padding-bottom: 60px;
-}
 .cd-timeline h1{
     margin-top:40px;
 }
@@ -118,8 +121,7 @@ h1.cover-heading{
 .cd-timeline {
     position: relative;
     padding: 2em 0;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 5em;
 }
 .cd-timeline::before {
     /* this is the vertical line */
@@ -133,10 +135,6 @@ h1.cover-heading{
     background: #d7e4ed;
 }
 @media only screen and (min-width: 1170px) {
-    .cd-timeline {
-        margin-top: 3em;
-        margin-bottom: 3em;
-    }
     .cd-timeline::before {
         left: 50%;
         margin-left: -2px;
@@ -304,10 +302,10 @@ h1.cover-heading{
  * Footer
  */
 .footer{
+    position: absolute;
     bottom: 0;
     width: 100%;
     height: 60px;
-    margin-top:100px;
     background-color: #561;
 }
 .footer > .container {
@@ -318,10 +316,52 @@ h1.cover-heading{
     color:#fff;
     margin: 20px 0;
 }
+/*
+ * Login
+ */
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-signin dt#password-label{
+    height:0px;
+    display:none;
+}
 
 /*
  * Specific
  */
 #school {
-    margin-bottom: 165px;
+    min-height: 750px;
 }
