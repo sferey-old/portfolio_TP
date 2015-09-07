@@ -50,11 +50,24 @@ TP :
     Restructurer les pages en ajoutant les layouts et partials
       - Réaliser les formulaires
       
-    
-
-
 ### Stage 3
-
+    Ajout de fonctionnalité
+     - Authentification
+     - Gestion de BDD
+     - Service
+     
+TP : 
+    Réaliser les élèments de BDD pour le model Formation
+        - Faire un breadcrumb
+        - 
 
 
 ### Stage 4
+    Ajout de fonctionnalité
+     - ACL
+     - Routes
+    
+    Bonus
+     - ZF_Debug
+     
+TP : Terminer le projet

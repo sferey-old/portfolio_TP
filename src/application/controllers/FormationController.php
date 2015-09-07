@@ -8,9 +8,21 @@ class FormationController extends Zend_Controller_Action
 
     public function createAction() {
         # Création du formulaire
+        $form = new Form_Formation();
+        $this->view->assign('form', $form);
+
+        $form->populate(array("name" => "toto"));
+
         # Récupération des données
-        # Validation des données avec le formulaire
-        # Enregistrement des données
+        if ($this->getRequest()->isPost()) {
+            $data = $this->getRequest()->getPost();
+            # Validation des données avec le formulaire
+            if ($form->isValid($data)) {
+                $data = $form->getValues();
+                # Enregistrement des données
+
+            }
+        }
     }
 
     public function readAction() {
